@@ -12,6 +12,10 @@ int main() {
     return 0;
 }
 
+/*
+get a positive number from user
+@param return [OUT] user's positive number
+*/
 float get_positive_number() {
     float input = -1;
     while (input < POSITIVE_THRESHOLD) {
