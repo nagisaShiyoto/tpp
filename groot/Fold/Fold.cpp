@@ -3,30 +3,30 @@
 #define STANDART_START 1
 #define STANDART_END 10
 
-void print_multiply_table(int start_value, int end_value);
-void print_spaces(int highest_spcace_number, int result);
-int digit_amount(int result);
+void printMultiplyTable(int start_value, int end_value);
+void printSpaces(int highest_spcace_number, int result);
+int digitAmount(int result);
 
 int main() {
-    print_multiply_table(STANDART_START, STANDART_END);
+    printMultiplyTable(STANDART_START, STANDART_END);
 }
 
 /* 
 print the multiplication table from start_value to end_value
 
-@param start_value [IN] the smallest multiplication value in the table
-@param end_value [IN] the biggest multiplication value in the table
+@param startValue [IN] the smallest multiplication value in the table
+@param endValue [IN] the biggest multiplication value in the table
 */
-void print_multiply_table(int start_value, int end_value) {
+void printMultiplyTable(int startValue, int endValue) {
     int result = 0;
     // the largest number has the largest digit amount so he also have the largest needed space to print
-    int highest_space_amount = digit_amount(end_value * end_value) + 1;
+    int highestSpaceAmount = digitAmount(endValue * endValue) + 1;
 
-    for (int i = start_value; i <= end_value; i++) {
-        for (int j = start_value; j <= end_value; j++) {
+    for (int i = startValue; i <= endValue; i++) {
+        for (int j = startValue; j <= endValue; j++) {
             result = i * j;
             std::cout << result;
-            print_spaces(highest_space_amount, result);
+            printSpaces(highestSpaceAmount, result);
         }
         std::cout << std::endl;
     }
@@ -35,12 +35,12 @@ void print_multiply_table(int start_value, int end_value) {
 /*
 print padding spaces to have fixed print size to every num
 
-@param highest_space_number [IN] the fixed space to every number(including spaces)
+@param highestSpaceNumber [IN] the fixed space to every number(including spaces)
 @param result [IN] the number you want to pad spaces in print
 */
-void print_spaces(int highest_space_number, int result) {
-    int space_taken = digit_amount(result);
-    int space_amount = highest_space_number - space_taken;
+void printSpaces(int highestSpaceNumber, int result) {
+    int spaceTaken = digitAmount(result);
+    int space_amount = highestSpaceNumber - spaceTaken;
     for (int i = 0; i < space_amount; i++) {
         std::cout << " ";
     }
@@ -52,7 +52,7 @@ calculate the amount of digits -> amount of size used
 @param result [IN] the number
 @param return [OUT] the amount of spaces taken
 */
-int digit_amount(int result) {
+int digitAmount(int result) {
     int counter = 0;
 
     while (result > 0) {
