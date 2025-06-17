@@ -19,7 +19,6 @@ void printMultiplyTable(int startValue, int endValue) {
 
 void printPaddingSpaces(int highestSpaceNumber, int result) {
     int spaceTaken = static_cast<int>(std::log10(result));
-    //int spaceAmount = highestSpaceNumber - spaceTaken;
     for (int i = spaceTaken; i < highestSpaceNumber; i++) {
         std::cout << " ";
     }
