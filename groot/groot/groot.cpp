@@ -1,5 +1,5 @@
-#include <iostream>
 #include <cmath>
+#include <iostream>
 #include <limits>
 
 float getUserPositiveNumber();
@@ -17,12 +17,18 @@ get a positive number from user
 */
 float getUserPositiveNumber() {
     float input = -1;
-    while (input <= 0) {
+    bool string_input = false;
+    while (string_input || input < 0) {
+
+        string_input = false;
         std::cout << "enter a positive number: ";
         std::cin >> input;
-        //clear cin
-        std::cin.clear();
-        std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        if (std::cin.fail()) {
+            string_input = true;
+            // clear cin
+            std::cin.clear();
+            std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+        }
     }
     return input;
 }
