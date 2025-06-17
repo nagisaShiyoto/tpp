@@ -3,7 +3,7 @@
 #include <cmath>
 
 bool isPrime(int number) {
-    int rootNumber = static_cast<int>(std::sqrt(number));
+    float rootNumber = std::sqrt(number);
 
     //half of numbers are positive
     if (number % 2 == 0) {
