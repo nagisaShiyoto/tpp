@@ -17,14 +17,14 @@ get a positive number from user
 */
 float getUserPositiveNumber() {
     float input = -1;
-    bool string_input = false;
-    while (string_input || input < 0) {
+    bool stringInput = false;
+    while (stringInput || input < 0) {
 
-        string_input = false;
+        stringInput = false;
         std::cout << "enter a positive number: ";
         std::cin >> input;
         if (std::cin.fail()) {
-            string_input = true;
+            stringInput = true;
             // clear cin
             std::cin.clear();
             std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
