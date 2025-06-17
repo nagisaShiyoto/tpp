@@ -1,5 +1,6 @@
 #include "mul_table.h"
 #include <iostream>
+#include <cmath>
 
 void printMultiplyTable(int startValue, int endValue) {
     int result = 0;
