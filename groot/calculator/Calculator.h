@@ -57,6 +57,7 @@ class Calculator {
 
 class DivideByZeroError {
   public:
+    virtual ~DivideByZeroError();
     // print divide by zero error
     void print_error();
 };
@@ -64,6 +65,8 @@ class DivideByZeroError {
 class OutOfOptionError {
   public:
     OutOfOptionError(char option);
+    virtual ~OutOfOptionError();
+
     // print wrong portion
     void print_error();
 

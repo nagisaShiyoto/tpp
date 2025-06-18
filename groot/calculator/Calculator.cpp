@@ -24,20 +24,19 @@ double Calculator::calculate(double number1, char operation, double number2) {
     switch (operation) {
     case Options::ADD:
         return Calculator::add(number1, number2);
-        break;
     case Options::SUBTRACT:
         return Calculator::subtract(number1, number2);
-        break;
     case Options::MULTIPLY:
         return Calculator::multiply(number1, number2);
-        break;
     case Options::DIVIDE:
         return Calculator::divide(number1, number2);
-        break;
     default:
         throw OutOfOptionError(operation);
-        break;
     }
+}
+
+DivideByZeroError::~DivideByZeroError() {
+    // empty block
 }
 
 void DivideByZeroError::print_error() {
@@ -46,6 +45,10 @@ void DivideByZeroError::print_error() {
 
 OutOfOptionError::OutOfOptionError(char option) {
     this->wrongOperation = option;
+}
+
+OutOfOptionError::~OutOfOptionError() {
+    // empty block
 }
 
 void OutOfOptionError::print_error() {
