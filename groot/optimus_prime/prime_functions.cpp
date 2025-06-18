@@ -3,7 +3,7 @@
 #include <iostream>
 
 bool isPrime(int number) {
-    float rootNumber = std::sqrt(number);
+    double rootNumber = std::sqrt(number);
 
     // half of numbers are positive
     if (number % 2 == 0) {
@@ -18,7 +18,7 @@ bool isPrime(int number) {
     return true;
 }
 
-void getPrimeNumbers(int size, int primeNumbers[]) {
+void getPrimeNumbersArray(int size, int primeNumbers[]) {
     int primeFound = 1;
     int currentCheck = 3;
     if (size <= 0) {
@@ -33,4 +33,24 @@ void getPrimeNumbers(int size, int primeNumbers[]) {
         // number can't be positive
         currentCheck += 2;
     }
+}
+
+
+std::vector<int> getPrimeNumbersVector(int size) {
+    std::vector<int> primeNumbers;
+    int primeFound = 1;
+    int currentCheck = 3;
+    if (size <= 0) {
+        return primeNumbers;
+    }
+    primeNumbers.push_back(2);
+    while (primeFound < size) {
+        if (isPrime(currentCheck)) {
+            primeNumbers.push_back(currentCheck);
+            primeFound++;
+        }
+        // number can't be positive
+        currentCheck += 2;
+    }
+    return primeNumbers;
 }
