@@ -35,7 +35,6 @@ void getPrimeNumbersArray(int size, int primeNumbers[]) {
     }
 }
 
-
 std::vector<int> getPrimeNumbersVector(int size) {
     std::vector<int> primeNumbers;
     int primeFound = 1;
