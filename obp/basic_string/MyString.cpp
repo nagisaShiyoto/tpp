@@ -1,10 +1,8 @@
 #include "MyString.h"
 #include <string.h>
 #pragma warning(disable : 4996)
-MyString::MyString() {
-    this->m_string = new char[1];
-    this->m_string[0] = NULL;
-    this->m_size = 1;
+MyString::MyString() : MyString("") {
+    // clear block code
 }
 
 MyString::MyString(const char* newString) {
@@ -26,7 +24,7 @@ char* MyString::getString() const {
 }
 
 size_t MyString::getSize() const {
-    return this->m_size;
+    return this->m_size - 1;
 }
 
 MyString MyString::operator+(const MyString& rightString) const {
