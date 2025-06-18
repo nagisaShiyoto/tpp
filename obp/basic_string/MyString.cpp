@@ -3,12 +3,12 @@
 #pragma warning(disable : 4996)
 MyString::MyString() {
     this->m_string = new char[1];
-    this->m_string[0] = NULL; 
+    this->m_string[0] = NULL;
     this->m_size = 1;
 }
 
-MyString::MyString( const char* newString) {
-    this->m_size = strlen(newString) + 1 ;
+MyString::MyString(const char* newString) {
+    this->m_size = strlen(newString) + 1;
     this->m_string = new char[this->m_size];
     strcpy(m_string, newString);
 }

@@ -13,10 +13,10 @@ class MyString {
 
     // concate two strings
     MyString operator+(const MyString& rightString) const;
-    //adds string to my own
+    // adds string to my own
     MyString& operator+=(const MyString& rightString);
 
   private:
-	char* m_string;
+    char* m_string;
     size_t m_size;
 };
