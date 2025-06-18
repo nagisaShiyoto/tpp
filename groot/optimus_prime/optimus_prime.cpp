@@ -1,13 +1,12 @@
+#include "prime_functions.h"
 #include <iostream>
-#include "check_prime.h"
+#include <memory>
 
-int main()
-{
-    int size = 20;
+int main() {
+    int size = 10;
+    std::unique_ptr<int> primeNumbers(new int[size]);
+    getPrimeNumbers(size, primeNumbers.get());
     for (int i = 0; i < size; i++) {
-        if (isPrime(i)) {
-            std::cout << i << std::endl;
-        }
-
+        std::cout << primeNumbers.get()[i] << " ";
     }
 }
