@@ -26,17 +26,12 @@ void ComplexNumber::setImaginary(const double imaginary) {
 }
 
 void ComplexNumber::printNumber() const {
-    bool printedReal = false;
-    if (this->m_realComponent != 0) {
-        std::cout << this->m_realComponent;
-        printedReal = true;
-    }
-    if (this->m_imaginaryComponent != 0 && this->m_realComponent != 0) {
-        std::cout << " + " << this->m_imaginaryComponent << "i";
-    } else if (this->m_imaginaryComponent != 0) {
-        std::cout << this->m_imaginaryComponent << "i";
-    } else if(!printedReal) {
-        std::cout << "0";
+    if (this->getImaginary() != 0 && this->getReal() != 0) {
+        std::cout << this->getReal() << " + " << this->getImaginary() << "i";
+    } else if (this->getImaginary() == 0) {
+        std::cout << this->getReal();
+    } else {
+        std::cout << this->getImaginary() << "i";
     }
     std::cout << std::endl;
 }
