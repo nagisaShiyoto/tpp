@@ -12,6 +12,15 @@ void* LinkedMemory::operator new(std::size_t count) {
 }
 
 void LinkedMemory::printMemoryData() {
+    MemoryNode* curr = LinkedMemory::m_firstMemoryNode;
+    while (curr != nullptr) {
+        std::cout << "---------------------------------" << std::endl;
+        std::cout << "place in memory: " << curr -> m_memory << std::endl;
+        std::cout << "size: " << curr -> m_size << std::endl;
+        std::cout << "---------------------------------" << std::endl;
+
+        curr = curr->m_nextNode;
+    }
 }
 
 void LinkedMemory::addStart(MemoryNode* newNode) {

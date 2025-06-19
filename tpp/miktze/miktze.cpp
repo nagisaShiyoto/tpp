@@ -7,4 +7,5 @@ int main()
     new char[123];
     new float[11];
 
+    LinkedMemory::printMemoryData();
 }
