@@ -3,9 +3,19 @@
 
 int main()
 {
-    new int[12];
-    new char[123];
-    new float[11];
-
+    int* test0 = new int;
+    char* test1 = new char[123];
+    float* test2 = new float[11];
+    int* test3 = new int[11];
+    float* test4 = new float[11];
+    LinkedMemory::printMemoryData();
+    delete[] test1;
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+    LinkedMemory::printMemoryData();
+    delete[] test4;
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
+    LinkedMemory::printMemoryData();
+    delete test0;
+    std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
     LinkedMemory::printMemoryData();
 }
