@@ -43,8 +43,7 @@ MemoryNode* LinkedMemory::findBeforeMemory(void* pointer) {
         temp = temp->m_nextNode;
     }
     if (temp == nullptr || temp->m_nextNode == nullptr) {
-        // to-do: find error
-        throw std::bad_alloc();
+        return nullptr;
     }
     return temp;
 }
@@ -59,6 +58,10 @@ void LinkedMemory::removeFromList(void* toDelete) {
         return;
     }
     beforeDelete = LinkedMemory::findBeforeMemory(toDelete);
+    // cpp implementation: no bloack found -> free only given pointer's memory
+    if (beforeDelete == nullptr) {
+        return;
+    }
     toDeleteNode = beforeDelete->m_nextNode;
     beforeDelete->m_nextNode = beforeDelete->m_nextNode->m_nextNode;
     free(toDeleteNode);

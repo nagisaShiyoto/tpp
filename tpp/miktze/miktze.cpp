@@ -8,6 +8,7 @@ int main()
     float* test2 = new float[11];
     int* test3 = new int[11];
     float* test4 = new float[11];
+    float* test5 = NULL;
     LinkedMemory::printMemoryData();
     delete[] test1;
     std::cout << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl << std::endl;
