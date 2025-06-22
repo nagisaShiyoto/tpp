@@ -75,6 +75,7 @@ void operator delete(void* ptr) throw() {
 _MemoryNode* LinkedMemory::createNode(size_t size, void* memory_p) {
     MemoryNode* newNode = (MemoryNode*)malloc(sizeof(MemoryNode));
     if (newNode == nullptr) {
+        free(memory_p);
         throw std::bad_alloc();
     }
     newNode->m_memory = memory_p;
