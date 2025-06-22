@@ -72,7 +72,7 @@ void operator delete(void* ptr) throw() {
     return LinkedMemory::operator delete(ptr);
 }
 
-_MemoryNode* LinkedMemory::createNode(size_t size, void* memory_p) {
+MemoryNode* LinkedMemory::createNode(size_t size, void* memory_p) {
     MemoryNode* newNode = (MemoryNode*)malloc(sizeof(MemoryNode));
     if (newNode == nullptr) {
         free(memory_p);

@@ -37,7 +37,7 @@ class LinkedMemory {
     static int m_counter;
 
     // create the memory node
-    static struct _MemoryNode* createNode(size_t size, void* memory_p);
+    static MemoryNode* createNode(size_t size, void* memory_p);
 
     // add node to the starts
     static void addStart(MemoryNode* newNode);
